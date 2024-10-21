@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 18: Research HTML</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Table</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="home">
+            <h2>Basic Information</h2>
+            <p>Welcome to my Website, I am Cruz, Reynalyn</p>
+        </section>
+
+        <section id="lists">
+            <h3>My favorite Series/Movies</h3>
+            <ul>
+                <li>Money Heist</li>
+                <li>Spiderman</li>
+            </ul>
+
+            <h3>My Favorites Song</h3>
+            <ol>
+                <li>Rapstar</li>
+                <li>Batugan</li>
+            </ol>
+        </section>
+
+        <section id="table">
+            <h2>Table</h2>
+            <table border="1">
+                <tr>
+                    <th>Reyn</th>
+                    <th>23</th>
+                    <th>Bagumbong</th>
+                </tr>
+                <tr>
+                    <td>Amy</td>
+                    <td>22</td>
+                    <td>Caloocan</td>
+                </tr>
+                <tr>
+                    <td>Martius</td>
+                    <td>27</td>
+                    <td>Valenzuela</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="form">
+            <h2>Contact Us</h2>
+            <form action="#" method="post">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="media">
+            <h2>Blog</h2>
+
+            <h3>Image</h3>
+            <img src="wallpaper.jpg" width="200" height="100">
+
+            <h3>Canvas</h3>
+            <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+
+            <h3>Video</h3>
+            <video width="320" height="240" controls>
+                <source src="ss.mp4" type="video/mp4">
+            </video>
+
+            <h3>YouTube Video</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/_InqQJRqGW4?si=sYVVH7s0pIUN_ZSX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+
+        <section id="drag-drop">
+            <h2>Drag and Drop</h2>
+            <div id="drag-container" style="border: 1px solid black; width: 300px; height: 300px;">
+                <img id="drag1" src="userprofile.jpg" draggable="true" ondragstart="drag(event)" width="300" height="300" alt="draggable image">
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            var data = event.dataTransfer.getData("text");
+            event.target.appendChild(document.getElementById(data));
+        }
+    </script>
+
+</body>
+
+</html>
